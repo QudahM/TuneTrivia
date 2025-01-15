@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -15,8 +15,19 @@ const AudioPlayer = ({
   onPlayPause = () => {},
 }: AudioPlayerProps) => {
   const [localIsPlaying, setLocalIsPlaying] = useState(isPlaying);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handlePlayPause = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio(audioUrl);
+    }
+
+    if (localIsPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+
     setLocalIsPlaying(!localIsPlaying);
     onPlayPause();
   };
