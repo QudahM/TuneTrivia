@@ -21,12 +21,16 @@ TuneTrivia is an engaging and interactive web application designed to challenge 
     ```sh
     git clone https://github.com/qudahM/TuneTrivia.git
 2. Navigate to the project directory:
+    ```sh
     cd TuneTrivia
 3. Install dependencies:
+    ```sh
     npm install
 4. Set up environment variables: 
+    ```
     Create a .env file in the root directory and add the necessary environment variables. Refer to .env.example for the required variables.
 5. Start the development server:
+    ```sh
     npm run dev
 
 ### Usage
