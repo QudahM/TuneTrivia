@@ -28,4 +28,21 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000, // Bypass warnings for chunks under 1 MB
+
+    // Rollup options for manual chunking
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Example: Split vendor libraries into a separate chunk
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          // You can add other large dependencies here if needed
+        },
+      },
+    },
+  },
 });
+
+

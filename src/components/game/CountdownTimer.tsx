@@ -46,7 +46,6 @@ const CountdownTimer = ({
           <Progress
             value={progress}
             className="h-full w-full rounded-full"
-            indicatorClassName="bg-orange-500 transition-all duration-200"
           />
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
